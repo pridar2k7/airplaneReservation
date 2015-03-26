@@ -1,0 +1,8 @@
+DAO/Fare.class
+resource/HelloResource.class
+config/MessagesConfiguration.class
+DAO/UniversityMapper.class
+AirlineReservationService.class
+config/AirlineReservationServiceConfiguration.class
+DAO/UniversityDAO.class
+Views/UniversityView.class

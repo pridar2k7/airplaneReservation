@@ -1,0 +1,8 @@
+messages:
+  hello: Hello world Sattish!
+
+dataBase:
+  driverClass: com.mysql.jdbc.Driver
+  user: root
+  password: darshini90
+  url: jdbc:mysql://localhost/airlineReservation
