@@ -1,8 +1,10 @@
-DAO/Fare.class
-resource/HelloResource.class
-config/MessagesConfiguration.class
-DAO/UniversityMapper.class
+Views/FlightView.class
+DAO/FlightDAO.class
 AirlineReservationService.class
+DAO/Mapper/FlightFareMapper.class
+DAO/Fare.class
+resource/FlightResource.class
+config/MessagesConfiguration.class
+Views/FlightFareQueryView.class
+DAO/Mapper/FlightMapper.class
 config/AirlineReservationServiceConfiguration.class
-DAO/UniversityDAO.class
-Views/UniversityView.class

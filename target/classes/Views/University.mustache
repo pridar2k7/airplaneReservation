@@ -1,16 +1,38 @@
- <html>
-    <head>
-        <title>Users</title>
-    </head>
-    <body>
-        <h1>Users</h1>
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+<h1 align="center">Fare Details</h1>
+
+<div align="center">
+
+    <table border="1" align="center">
+        <tr align="center">
+            <th>
+                FlightNumber
+            </th>
+            <th>
+                FareCode
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Restrictions
+            </th>
+        </tr>
         {{#fareDetails}}
-        <div>
-            <p>FlightNumber: {{flightNumber}}</p>
-            <p>FareCode: {{fareCode}}</p>
-            <p>Amount: {{amount}}</p>
-            <p>Restrictions: {{restrictions}}</p>
-        </div>
+            <tr>
+                <td>{{flightNumber}}</td>
+                <td>{{fareCode}}</td>
+                <td>{{amount}}</td>
+                <td>{{restrictions}}</td>
+            </tr>
         {{/fareDetails}}
-    </body>
+
+    </table>
+
+</div>
+</body>
 </html>

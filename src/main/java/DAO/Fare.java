@@ -25,7 +25,7 @@ public class Fare {
         return restrictions;
     }
 
-    protected Fare(String flightNumber, String fareCode, String amount, String restrictions) {
+    public Fare(String flightNumber, String fareCode, String amount, String restrictions) {
         this.flightNumber = flightNumber;
         this.fareCode = fareCode;
         this.amount = amount;
