@@ -14,6 +14,7 @@ import java.sql.SQLException;
 public class FlightFareMapper implements ResultSetMapper<Fare> {
 
     public Fare map(int index, ResultSet r, StatementContext ctx) throws SQLException {
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"+r.getString("flight_number"));
         return new Fare(r.getString("flight_number"),r.getString("fare_code"), r.getString("amount"), r.getString("restrictions"));
     }
 }

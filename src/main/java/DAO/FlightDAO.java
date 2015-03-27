@@ -2,6 +2,7 @@ package DAO;
 
 import DAO.Mapper.FlightFareMapper;
 import DAO.Mapper.FlightMapper;
+import org.skife.jdbi.v2.sqlobject.Bind;
 import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.customizers.Mapper;
 
@@ -14,8 +15,8 @@ import java.util.List;
 public interface FlightDAO {
 
     @Mapper(FlightFareMapper.class)
-    @SqlQuery("select * from fare where flight_number ='536'")
-    List<Fare> getFareDetails();
+    @SqlQuery("select * from fare where flight_number =:flightNumber")
+    List<Fare> getFareDetails(@Bind("flightNumber") String flightNumber);
 
 
     @Mapper(FlightMapper.class)

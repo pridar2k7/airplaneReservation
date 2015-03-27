@@ -10,6 +10,7 @@ import config.MessagesConfiguration;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URISyntaxException;
@@ -41,10 +42,11 @@ public class FlightResource {
     @GET
     @Path("/getFareDetails")
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
-    public Response getFareDetails() throws JsonProcessingException {
+    public Response getFareDetails(@QueryParam("flight_number") String flightNumber) throws JsonProcessingException {
 //        ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 //        String json = ow.writeValueAsString(universityDAO.getFareDetails());
-        return Response.ok().entity(new FlightView(flightDAO.getFareDetails())).build();
+        System.out.println("****************" + flightNumber);
+        return Response.ok().entity(new FlightView(flightDAO.getFareDetails(flightNumber))).build();
 //    return universityDAO.getFareDetails();
     }
 
