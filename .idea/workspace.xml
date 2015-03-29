@@ -2,35 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d759b177-64ce-4a66-a1d4-0bfa29291a3a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Views/FetchFlightsView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/Views/FlightDetails.mustache" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/Views/FlightsQuery.mustache" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Views/FlightsQueryView.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/DAO/Fare.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/DAO/UniversityDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/DAO/UniversityMapper.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/University.mustache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Views/University.mustache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/Views/UniversityView.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/resource/HelloResource.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/DAO/Fare.java" afterPath="$PROJECT_DIR$/src/main/java/DAO/Domain/Fare.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/DAO/Mapper/FlightFareMapper.java" afterPath="$PROJECT_DIR$/src/main/java/Mapper/FlightFareMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/DAO/Mapper/FlightMapper.java" afterPath="$PROJECT_DIR$/src/main/java/Mapper/FlightMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Mapper/OneLegFlightDetailsMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Mapper/TwoLegFlightDetailsMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/1-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/1-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/AirlineReservationService.class" afterPath="$PROJECT_DIR$/target/classes/AirlineReservationService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config/AirlineReservationServiceConfiguration.class" afterPath="$PROJECT_DIR$/target/classes/config/AirlineReservationServiceConfiguration.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-1-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/original-1-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AirlineReservationService.java" afterPath="$PROJECT_DIR$/src/main/java/AirlineReservationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/config/AirlineReservationServiceConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/config/AirlineReservationServiceConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Views/FetchFlightsView.java" afterPath="$PROJECT_DIR$/src/main/java/Views/FetchFlightsView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAO/Domain/Flight.java" afterPath="$PROJECT_DIR$/src/main/java/DAO/Domain/Flight.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/DAO/FlightDAO.java" afterPath="$PROJECT_DIR$/src/main/java/DAO/FlightDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Views/FlightFareQueryView.java" afterPath="$PROJECT_DIR$/src/main/java/Views/FlightFareQueryView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/Views/FlightDetails.mustache" afterPath="$PROJECT_DIR$/src/main/resources/Views/FlightDetails.mustache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Mapper/FlightDetailsMapper.java" afterPath="$PROJECT_DIR$/src/main/java/Mapper/FlightDetailsMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resource/FlightResource.java" afterPath="$PROJECT_DIR$/src/main/java/resource/FlightResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Views/FlightView.java" afterPath="$PROJECT_DIR$/src/main/java/Views/FlightView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configuration.yml" afterPath="$PROJECT_DIR$/configuration.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HelloWorld.iws" />
@@ -60,8 +44,8 @@
       <file leaf-file-name="FlightResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/resource/FlightResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.740566" vertical-offset="1014" max-vertical-offset="1755">
-              <caret line="101" column="66" selection-start-line="101" selection-start-column="66" selection-end-line="101" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.8820755" vertical-offset="1104" max-vertical-offset="1890">
+              <caret line="113" column="55" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Views/FetchFlightsView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+              <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -102,30 +86,50 @@
       <file leaf-file-name="FlightDetails.mustache" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Views/FlightDetails.mustache">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="555">
-              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-              <folding>
-                <marker date="1427607439010" expanded="true" signature="180:493" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PassengerDetailsView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Views/PassengerDetailsView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            <state vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="720">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PassengerDetails.mustache" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Views/PassengerDetails.mustache">
+      <file leaf-file-name="FlightDetailsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Mapper/FlightDetailsMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="525">
-              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OneLegFlightDetailsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Mapper/OneLegFlightDetailsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="19" selection-end-column="109" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TwoLegFlightDetailsMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Mapper/TwoLegFlightDetailsMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+              <caret line="20" column="102" selection-start-line="20" selection-start-column="102" selection-end-line="20" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Flight.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Domain/Flight.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+              <caret line="11" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -134,8 +138,8 @@
       <file leaf-file-name="FlightDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/DAO/FlightDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1140">
-              <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="1395">
+              <caret line="62" column="75" selection-start-line="62" selection-start-column="75" selection-end-line="62" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,8 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/config/ExampleServiceConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ExampleService.java" />
         <option value="$PROJECT_DIR$/src/main/java/config/MessagesConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/UniversityMapper.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -195,10 +197,14 @@
         <option value="$PROJECT_DIR$/src/main/java/Views/FlightsQueryView.java" />
         <option value="$PROJECT_DIR$/src/main/java/AirlineReservationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Mapper/CustomerNameMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Views/FetchFlightsView.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/Views/FlightDetails.mustache" />
         <option value="$PROJECT_DIR$/src/main/resources/Views/FlightsQuery.mustache" />
+        <option value="$PROJECT_DIR$/src/main/java/DAO/Domain/Flight.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Mapper/FlightDetailsMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Views/FetchFlightsView.java" />
         <option value="$PROJECT_DIR$/src/main/java/DAO/FlightDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Mapper/OneLegFlightDetailsMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Mapper/TwoLegFlightDetailsMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/Views/FlightDetails.mustache" />
         <option value="$PROJECT_DIR$/src/main/java/resource/FlightResource.java" />
       </list>
     </option>
@@ -454,6 +460,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Mapper" />
       <recent name="DAO" />
       <recent name="Views" />
       <recent name="DAO.Mapper" />
@@ -726,20 +733,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/config/AirlineReservationServiceConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="315">
-          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AirlineReservationSystem.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/AirlineReservationService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="435">
@@ -1024,24 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Domain/Flight.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1155624" vertical-offset="0" max-vertical-offset="649">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Mapper/FlightDetailsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3466872" vertical-offset="0" max-vertical-offset="649">
-          <caret line="15" column="97" selection-start-line="15" selection-start-column="97" selection-end-line="15" selection-end-column="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Views/FlightInstanceQuery.mustache">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.168" vertical-offset="0" max-vertical-offset="625">
@@ -1084,28 +1059,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/FlightsQuery.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="525">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Mapper/FlightDetailsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Views/FetchFlightsView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Mapper/TwoLegFlightDetailsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <caret line="20" column="102" selection-start-line="20" selection-start-column="102" selection-end-line="20" selection-end-column="102" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Views/FlightDetails.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="555">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding>
-            <marker date="1427607439010" expanded="true" signature="180:493" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-21.25" vertical-offset="0" max-vertical-offset="720">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/Views/FlightsQuery.mustache">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Mapper/OneLegFlightDetailsMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="525">
-          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="19" selection-end-column="109" />
           <folding />
         </state>
       </provider>
@@ -1118,10 +1117,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DAO/Domain/Flight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="11" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DAO/FlightDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="1140">
-          <caret line="64" column="52" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="729" max-vertical-offset="1395">
+          <caret line="62" column="75" selection-start-line="62" selection-start-column="75" selection-end-line="62" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1130,8 +1137,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resource/FlightResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.740566" vertical-offset="1014" max-vertical-offset="1755">
-          <caret line="101" column="66" selection-start-line="101" selection-start-column="66" selection-end-line="101" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.8820755" vertical-offset="1104" max-vertical-offset="1890">
+          <caret line="113" column="55" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

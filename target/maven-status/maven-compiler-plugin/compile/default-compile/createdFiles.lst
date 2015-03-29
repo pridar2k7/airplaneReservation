@@ -1,4 +1,5 @@
 Mapper/CustomerNameMapper.class
+Mapper/OneLegFlightDetailsMapper.class
 DAO/FlightDAO.class
 Views/FlightInstanceQueryView.class
 Mapper/FlightDetailsMapper.class
@@ -12,6 +13,7 @@ DAO/Domain/Flight.class
 Views/AvailableSeatsView.class
 DAO/Domain/FlightInstance.class
 config/AirlineReservationServiceConfiguration.class
+Mapper/TwoLegFlightDetailsMapper.class
 Views/PassengerDetailsQueryView.class
 Mapper/AvailableSeatsMapper.class
 Views/FlightInstanceView.class

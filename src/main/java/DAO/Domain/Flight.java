@@ -6,6 +6,10 @@ package DAO.Domain;
 public class Flight {
     String flightNumber;
     String weekdays;
+//    String firstConnectingFlight;
+//    String firstConnectingWeekday;
+//    String secondConnectingFlight;
+//    String secondConnectingWeekday;
 
     public Flight(String flightNumber, String weekdays) {
         this.flightNumber = flightNumber;

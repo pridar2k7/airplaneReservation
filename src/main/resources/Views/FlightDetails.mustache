@@ -7,25 +7,36 @@
 
 <div align="center">
 
-    <table border="1" align="center">
         {{^flights.isEmpty}}
+            <table border="1" align="center">
+
             <tr align="center">
                 <th>
                     Flight Number
                 </th>
-            </tr>
-        {{#flights}}
-            <tr>
-                <td>{{flightNumber}}</td>
-                <td>{{weekdays}}</td>
-            </tr>
-        {{/flights}}
+                <th>
+                    Weekdays
+                </th>
+                </tr>
+                {{#flights}}
+
+                    <tr>
+                {{#.}}
+
+                        <td>{{flightNumber}}</td>
+                        <td>{{weekdays}}</td>
+                {{/.}}
+
+                    </tr>
+
+            {{/flights}}
         {{/flights.isEmpty}}
-        {{^flights}}
+</table>
+
+    {{^flights}}
             No flights available
         {{/flights}}
 
-    </table>
 
 </div>
 </body>

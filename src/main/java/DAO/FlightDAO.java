@@ -56,15 +56,32 @@ public interface FlightDAO {
 
     @Mapper(FlightDetailsMapper.class)
     @SqlQuery("select flight_number, weekdays from flight where departure_airport_code=:fromAirportCode and arrival_airport_code=:toAirportCode")
-    List<Flight> getDirectFlights(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
+    List<List<Flight>> getDirectFlights(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
 
-    @Mapper(FlightDetailsMapper.class)
-    @SqlQuery("select *, SUBTIME(f1.scheduled_departure_time, f.scheduled_arrival_time) from " +
+    @Mapper(OneLegFlightDetailsMapper.class)
+    @SqlQuery("select f.flight_number as firstFNum, f.weekdays as firstWD, " +
+            " f1.flight_number as secondFNum, f1.weekdays as secondWD from " +
             "flight f JOIN flight f1 ON f.arrival_airport_code=f1.departure_airport_code " +
             "where f.departure_airport_code =:fromAirportCode and " +
             "f1.arrival_airport_code =:toAirportCode and " +
             "SUBTIME(f1.scheduled_departure_time, f.scheduled_arrival_time)> '01:00:00' and " +
             "(replace(concat('_',concat(f.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f1.weekdays,'_')), '_','.*') or " +
             "replace(concat('_',concat(f1.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f.weekdays,'_')), '_','.*'))")
-    List<Flight> getFlightsWithOneLeg(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
+    List<List<Flight>> getFlightsWithOneLeg(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
+
+    @Mapper(TwoLegFlightDetailsMapper.class)
+    @SqlQuery("select f.flight_number as firstFNum, f.weekdays as firstWD, " +
+            " f1.flight_number as secondFNum, f1.weekdays as secondWD," +
+            " f2.flight_number as thirdFNum, f2.weekdays as thirdWD from " +
+            "flight f JOIN flight f1 ON f.arrival_airport_code=f1.departure_airport_code " +
+            "JOIN flight f2  ON f1.arrival_airport_code = f2.departure_airport_code " +
+            "where f.departure_airport_code =:fromAirportCode and " +
+            "f2.arrival_airport_code =:toAirportCode and " +
+            "SUBTIME(f1.scheduled_departure_time, f.scheduled_arrival_time)> '01:00:00' and " +
+            "SUBTIME(f2.scheduled_departure_time, f1.scheduled_arrival_time)> '01:00:00' and " +
+            "(replace(concat('_',concat(f.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f1.weekdays,'_')), '_','.*') or " +
+            "replace(concat('_',concat(f1.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f.weekdays,'_')), '_','.*')) and " +
+    "(replace(concat('_',concat(f1.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f2.weekdays,'_')), '_','.*') or " +
+            "replace(concat('_',concat(f2.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f1.weekdays,'_')), '_','.*'))")
+    List<List<Flight>> getFlightsWithTwoLeg(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
 }

@@ -5,6 +5,7 @@
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/DAO/Domain/Customer.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/FlightView.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/FlightFareQueryView.java
+/home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/OneLegFlightDetailsMapper.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/FlightInstanceDetailsMapper.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/FlightInstanceQueryView.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/AvailableSeatsView.java
@@ -13,6 +14,7 @@
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/FlightDetailsMapper.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/FlightsQueryView.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/FlightMapper.java
+/home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/TwoLegFlightDetailsMapper.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/DAO/Domain/Fare.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/FetchFlightsView.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/DAO/Domain/FlightInstance.java

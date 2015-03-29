@@ -99,12 +99,21 @@ public class FlightResource {
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
     public Response fetchFlights(@QueryParam("from_airport_code") String fromAirportCode,
                                  @QueryParam("to_airport_code") String toAirportCode, @QueryParam("no_of_legs") int legCount) {
-        List<Flight> flightsBasedOnAirportCode = new ArrayList<>();
+        List<List<Flight>> flightsBasedOnAirportCode = new ArrayList<>();
         if (legCount == 0) {
             flightsBasedOnAirportCode = flightDAO.getDirectFlights(fromAirportCode, toAirportCode);
         }else if (legCount == 1) {
             flightsBasedOnAirportCode = flightDAO.getFlightsWithOneLeg(fromAirportCode, toAirportCode);
+        }else if (legCount == 2) {
+            flightsBasedOnAirportCode = flightDAO.getFlightsWithTwoLeg(fromAirportCode, toAirportCode);
         }
+        List<Flight> flights = flightsBasedOnAirportCode.get(0);
+
+        String replacedString = "_".concat(flights.get(0).getWeekdays().concat("_")).replace("_", ".*");
+        String replacedString1 = "_".concat(flights.get(1).getWeekdays().concat("_")).replace("_", ".*");
+        System.out.println("***********"+replacedString);
+        System.out.println("***********"+replacedString1);
+        System.out.println("***********"+replacedString.matches(replacedString1));
 
         return Response.ok().entity(new FetchFlightsView(flightsBasedOnAirportCode)).build();
     }
