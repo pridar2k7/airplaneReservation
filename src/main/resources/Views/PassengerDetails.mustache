@@ -1,0 +1,30 @@
+    <html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+<h1 align="center">Fare Details</h1>
+
+<div align="center">
+
+    <table border="1" align="center">
+        <tr align="center">
+            <th>
+                Passenger name
+            </th>
+            <th>
+                Passenger phone
+            </th>
+        </tr>
+        {{#customerList}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{phoneNumber}}</td>
+            </tr>
+        {{/customerList}}
+
+    </table>
+
+</div>
+</body>
+</html>

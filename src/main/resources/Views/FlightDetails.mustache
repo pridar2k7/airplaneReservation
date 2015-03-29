@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+<h1 align="center">Flight details</h1>
+
+<div align="center">
+
+    <table border="1" align="center">
+        {{^flights.isEmpty}}
+            <tr align="center">
+                <th>
+                    Flight Number
+                </th>
+            </tr>
+        {{#flights}}
+            <tr>
+                <td>{{flightNumber}}</td>
+                <td>{{weekdays}}</td>
+            </tr>
+        {{/flights}}
+        {{/flights.isEmpty}}
+        {{^flights}}
+            No flights available
+        {{/flights}}
+
+    </table>
+
+</div>
+</body>
+</html>

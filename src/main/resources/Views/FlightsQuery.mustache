@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+<h1 align="center">Select customer name</h1>
+
+<form action="/flight/fetchFlights">
+    <select name="from_airport_code">
+        {{#airportCodes}}
+            <option value="{{.}}">{{.}}</option>
+        {{/airportCodes}}
+    </select>
+    <br><br>
+    <select name="to_airport_code">
+        {{#airportCodes}}
+            <option value="{{.}}">{{.}}</option>
+        {{/airportCodes}}
+    </select>
+    <br><br>
+    <select name="no_of_legs">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+    </select>
+    <br><br>
+    <input type="submit">
+</form>
+</body>
+</html>

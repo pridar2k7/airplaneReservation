@@ -10,20 +10,8 @@ import javax.validation.constraints.NotNull;
 @SuppressWarnings("UnusedDeclaration")
 public class AirlineReservationServiceConfiguration extends Configuration {
 
-    @NotNull
-    @Valid
-    private MessagesConfiguration messages;
-
     @JsonProperty
     private DatabaseConfiguration dataBase = new DatabaseConfiguration();
-
-    public MessagesConfiguration getMessages() {
-        return messages;
-    }
-
-    public void setMessages(MessagesConfiguration messages) {
-        this.messages = messages;
-    }
 
     public DatabaseConfiguration getDataBase(){
         return dataBase;

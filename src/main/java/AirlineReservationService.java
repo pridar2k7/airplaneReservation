@@ -26,15 +26,12 @@ public class AirlineReservationService extends Service<AirlineReservationService
     }
 
 
-    // Create a DBI factory and build a JDBI instance final DBIFactory factory = new DBIFactory();
-    // final DBI jdbi = factory .build(e, c.getDataSourceFactory(), "mysql");
-    // Add the resource to the environment e.jersey().register(new ContactResource(jdbi)); }
     @Override
     public void run(AirlineReservationServiceConfiguration conf, Environment env) throws Exception {
         final DBIFactory factory = new DBIFactory();
         DBI jdbi = factory.build(env, conf.getDataBase(), "mysql");
         FlightDAO flightDAO = jdbi.onDemand(FlightDAO.class);
-        env.addResource(new FlightResource(conf.getMessages(), flightDAO));
+        env.addResource(new FlightResource(flightDAO));
     }
 
 

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+<h1 align="center">Flight instances</h1>
+
+<div align="center">
+
+    <table border="1" align="center">
+        <tr align="center">
+            <th>
+                Flight Number
+            </th>
+            <th>
+                Flight Date
+            </th>
+        </tr>
+        {{#flightInstanceDetails}}
+            <tr>
+                <td>{{flightNumber}}</td>
+                <td>{{flightDate}}</td>
+            </tr>
+        {{/flightInstanceDetails}}
+
+    </table>
+
+</div>
+</body>
+</html>

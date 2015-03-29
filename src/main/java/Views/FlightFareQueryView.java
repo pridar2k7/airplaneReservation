@@ -1,6 +1,5 @@
 package Views;
 
-import DAO.Fare;
 import com.yammer.dropwizard.views.View;
 
 import java.util.List;

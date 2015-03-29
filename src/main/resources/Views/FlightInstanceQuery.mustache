@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+<h1 align="center">Select customer name</h1>
+
+<form action="/flight/listFlightInstances">
+    <select name="passengerName">
+        {{#customers}}
+            <option value="{{name}}">{{name}}</option>
+        {{/customers}}
+    </select>
+    <br><br>
+    <input type="submit">
+</form>
+</body>
+</html>

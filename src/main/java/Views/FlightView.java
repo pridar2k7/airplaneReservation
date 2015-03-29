@@ -4,7 +4,7 @@ package Views;
  * Created by priyadarshini on 3/26/15.
  */
 
-import DAO.Fare;
+import DAO.Domain.Fare;
 import com.yammer.dropwizard.views.View;
 
 import java.util.List;

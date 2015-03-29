@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+<h1 align="center">Select Flight Instances:</h1>
+
+<form action="/flight/listPassengerDetails">
+    <select name="flight_instance">
+        {{#flightInstances}}
+        <option value="{{flightNumber}}_{{flightDate}}">{{flightNumber}} on {{flightDate}}</option>
+        {{/flightInstances}}
+    </select>
+    <br><br>
+    <input type="submit">
+</form>
+</body>
+</html>

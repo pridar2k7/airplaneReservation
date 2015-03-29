@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+<h1 align="center">Available Seats</h1>
+
+<div align="center">
+
+    <table border="1" align="center">
+        <tr align="center">
+            <th>
+                Available Seats
+            </th>
+        </tr>
+        {{#availableSeats}}
+            <tr>
+                <td>{{.}}</td>
+            </tr>
+        {{/availableSeats}}
+
+    </table>
+
+</div>
+</body>
+</html>
