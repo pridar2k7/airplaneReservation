@@ -27,7 +27,7 @@ public class FlightResource {
     }
 
     @GET
-    @Path("/fare")
+    @Path("/getFlightNumbers")
     public Response fareDetails() throws URISyntaxException {
         return Response.ok().entity(new FlightFareQueryView(flightDAO.getFlightNumbers())).build();
     }
@@ -39,16 +39,15 @@ public class FlightResource {
         return Response.ok().entity(new FlightView(flightDAO.getFareDetails(flightNumber))).build();
     }
 
-
     @GET
-    @Path("/flightInstances")
-    public Response flightInstances() throws URISyntaxException {
-        return Response.ok().entity(new PassengerDetailsQueryView(flightDAO.getFlightInstances())).build();
+    @Path("/getFlightInstances")
+    public Response flightInstances(@QueryParam("url") String toFetch) throws URISyntaxException {
+        return Response.ok().entity(new ListFlightInstancesView(flightDAO.getFlightInstances(), toFetch)).build();
     }
 
 
     @GET
-    @Path("/listPassengerDetails")
+    @Path("/getPassengerDetails")
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
     public Response listPassengerDetails(@QueryParam("flight_instance") String flightInstance) {
         String[] splitFlightInstances = flightInstance.split("_");
@@ -57,7 +56,7 @@ public class FlightResource {
 
 
     @GET
-    @Path("/passengerDetails")
+    @Path("/getCustomerNames")
     public Response passenger() throws URISyntaxException {
         return Response.ok().entity(new FlightInstanceQueryView(flightDAO.getCustomerNames())).build();
     }
@@ -72,14 +71,7 @@ public class FlightResource {
 
 
     @GET
-    @Path("/queryAvailableSeats")
-    public Response queryAvailableSeats() throws URISyntaxException {
-        return Response.ok().entity(new AvailableSeatsQueryView(flightDAO.getFlightInstances())).build();
-    }
-
-
-    @GET
-    @Path("/listAvailableSeats")
+    @Path("/getAvailableSeats")
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
     public Response listAvailableSeats(@QueryParam("flight_instance") String flightInstance) {
         String[] splitFlightInstances = flightInstance.split("_");
@@ -88,14 +80,14 @@ public class FlightResource {
 
 
     @GET
-    @Path("/queryFlights")
+    @Path("/getAirportCodes")
     public Response queryFlights() throws URISyntaxException {
         return Response.ok().entity(new FlightsQueryView(flightDAO.getAirportCodes())).build();
     }
 
 
     @GET
-    @Path("/fetchFlights")
+    @Path("/getConnectingFlights")
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
     public Response fetchFlights(@QueryParam("from_airport_code") String fromAirportCode,
                                  @QueryParam("to_airport_code") String toAirportCode, @QueryParam("no_of_legs") int legCount) {
@@ -108,12 +100,12 @@ public class FlightResource {
             flightsBasedOnAirportCode = flightDAO.getFlightsWithTwoLeg(fromAirportCode, toAirportCode);
         }
         List<Flight> flights = flightsBasedOnAirportCode.get(0);
-
-        String replacedString = "_".concat(flights.get(0).getWeekdays().concat("_")).replace("_", ".*");
-        String replacedString1 = "_".concat(flights.get(1).getWeekdays().concat("_")).replace("_", ".*");
-        System.out.println("***********"+replacedString);
-        System.out.println("***********"+replacedString1);
-        System.out.println("***********"+replacedString.matches(replacedString1));
+//
+//        String replacedString = "_".concat(flights.get(0).getWeekdays().concat("_")).replace("_", ".*");
+//        String replacedString1 = "_".concat(flights.get(1).getWeekdays().concat("_")).replace("_", ".*");
+//        System.out.println("***********"+replacedString);
+//        System.out.println("***********"+replacedString1);
+//        System.out.println("***********"+replacedString.matches(replacedString1));
 
         return Response.ok().entity(new FetchFlightsView(flightsBasedOnAirportCode)).build();
     }

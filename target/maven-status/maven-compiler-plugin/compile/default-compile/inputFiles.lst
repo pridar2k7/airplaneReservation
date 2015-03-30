@@ -1,6 +1,5 @@
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/FlightInstanceMapper.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/FlightFareMapper.java
-/home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/PassengerDetailsQueryView.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/DAO/FlightDAO.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/DAO/Domain/Customer.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/FlightView.java
@@ -20,6 +19,7 @@
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/DAO/Domain/FlightInstance.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/resource/FlightResource.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/config/MessagesConfiguration.java
+/home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Views/ListFlightInstancesView.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/AirlineReservationService.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/AvailableSeatsMapper.java
 /home/priyadarshini/Documents/Projects/AirplaneReservation/src/main/java/Mapper/AirportCodeMapper.java
