@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Flights</title>
+</head>
+<body>
+<div align="center">Select Any of the following options:</div>
+
+<form align="center" action="http://localhost:8080/flight/getAirportCodes">
+    <input type="submit" value="1. Fetch all flights from Destination A to B">
+</form>
+<form align="center" action="http://localhost:8080/flight/getFlightInstances">
+    <input type="hidden" name="toFetch" value="AvailableSeats" />
+    <input type="submit" value="2. Display available seats">
+</form>
+<form align="center" action="http://localhost:8080/flight/getFlightNumbers">
+    <input type="submit" value="3. Display all fare information">
+</form>
+<form align="center" action="http://localhost:8080/flight/getFlightInstances">
+    <input type="hidden" name="toFetch" value="PassengerDetails" />
+    <input type="submit" value="4. Display passenger details of a particular flight">
+</form>
+<form align="center" action="http://localhost:8080/flight/getCustomerNames">
+    <input type="submit" value="5. Get flight instances of a particular passenger">
+</form>
+</body>
+</html>

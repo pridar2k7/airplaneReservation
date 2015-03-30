@@ -13,12 +13,11 @@ import static java.util.Arrays.asList;
 /**
  * Created by priyadarshini on 3/28/15.
  */
-public class TwoLegFlightDetailsMapper implements ResultSetMapper<List<Flight>> {
+public class TwoLegFlightDetailsMapper implements ResultSetMapper<Flight> {
     @Override
-    public List<Flight> map(int i, ResultSet resultSet, StatementContext statementContext) throws SQLException {
-        Flight firstFlight = new Flight(resultSet.getString("firstFNum"), resultSet.getString("firstWD"));
-        Flight secondFlight = new Flight(resultSet.getString("secondFNum"), resultSet.getString("secondWD"));
-        Flight thirdFlight = new Flight(resultSet.getString("thirdFNum"), resultSet.getString("thirdWD"));
-        return asList(firstFlight,secondFlight, thirdFlight);
+    public Flight map(int i, ResultSet resultSet, StatementContext statementContext) throws SQLException {
+        Flight firstFlight = new Flight(asList(resultSet.getString("firstFNum"), resultSet.getString("secondFNum"), resultSet.getString("thirdFNum"))
+                ,asList(resultSet.getString("firstWD"), resultSet.getString("secondWD"), resultSet.getString("thirdWD")));
+        return firstFlight;
     }
 }

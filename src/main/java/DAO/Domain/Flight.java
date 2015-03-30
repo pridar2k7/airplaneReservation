@@ -1,34 +1,36 @@
 package DAO.Domain;
 
+import java.util.List;
+
 /**
  * Created by priyadarshini on 3/28/15.
  */
 public class Flight {
-    String flightNumber;
-    String weekdays;
+    List flightNumbers;
+    List weekdays;
 //    String firstConnectingFlight;
 //    String firstConnectingWeekday;
 //    String secondConnectingFlight;
 //    String secondConnectingWeekday;
 
-    public Flight(String flightNumber, String weekdays) {
-        this.flightNumber = flightNumber;
+    public Flight(List flightNumber, List weekdays) {
+        this.flightNumbers = flightNumber;
         this.weekdays = weekdays;
     }
 
-    public String getFlightNumber() {
-        return flightNumber;
+    public List getFlightNumbers() {
+        return flightNumbers;
     }
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
+    public void setFlightNumbers(List flightNumbers) {
+        this.flightNumbers = flightNumbers;
     }
 
-    public String getWeekdays() {
+    public List getWeekdays() {
         return weekdays;
     }
 
-    public void setWeekdays(String weekdays) {
+    public void setWeekdays(List weekdays) {
         this.weekdays = weekdays;
     }
 }

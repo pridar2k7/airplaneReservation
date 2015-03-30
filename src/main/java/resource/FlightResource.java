@@ -13,8 +13,9 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 @Path(value = "/flight")
@@ -25,6 +26,11 @@ public class FlightResource {
 
     public FlightResource(FlightDAO flightDAO) {
         this.flightDAO = flightDAO;
+    }
+
+    @GET
+    public Response home() throws URISyntaxException {
+        return Response.ok().entity(new HomeView()).build();
     }
 
     @GET
@@ -93,7 +99,7 @@ public class FlightResource {
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
     public Response getConnectingFlights(@QueryParam("from_airport_code") String fromAirportCode,
                                  @QueryParam("to_airport_code") String toAirportCode, @QueryParam("no_of_legs") int legCount) {
-        List<List<Flight>> flightsBasedOnAirportCode = new ArrayList<>();
+        List<Flight> flightsBasedOnAirportCode = new ArrayList<>();
         if (legCount == 0) {
             flightsBasedOnAirportCode = flightDAO.getDirectFlights(fromAirportCode, toAirportCode);
         }else if (legCount == 1) {
@@ -101,13 +107,28 @@ public class FlightResource {
         }else if (legCount == 2) {
             flightsBasedOnAirportCode = flightDAO.getFlightsWithTwoLeg(fromAirportCode, toAirportCode);
         }
-//        List<Flight> flights = flightsBasedOnAirportCode.get(0);
+        for (Flight flight : flightsBasedOnAirportCode) {
+            List<String> weekdays = flight.getWeekdays();
+            List retainedArrayList = new ArrayList();
+            for (String weekday : weekdays) {
+                String[] split = weekday.split("_");
+                ArrayList arrayList = new ArrayList();
+                Collections.addAll(arrayList, split);
+                if(retainedArrayList.isEmpty()){
+                    retainedArrayList=arrayList;
+                } else{
+                    retainedArrayList.retainAll(arrayList);
+                }
+
+            }
+            flight.setWeekdays(retainedArrayList);
 //
-//        String replacedString = "_".concat(flights.get(0).getWeekdays().concat("_")).replace("_", ".*");
-//        String replacedString1 = "_".concat(flights.get(1).getWeekdays().concat("_")).replace("_", ".*");
-//        System.out.println("***********"+replacedString);
-//        System.out.println("***********"+replacedString1);
-//        System.out.println("***********"+replacedString.matches(replacedString1));
+//            ArrayList arrayList1 = new ArrayList();
+//            String[] split1 = flights.get(1).getWeekdays().split("_");
+//            Collections.addAll(arrayList1, split1);
+//            System.out.println(arrayList1.toString());
+//            System.out.println(arrayList1);
+        }
 
         return Response.ok().entity(new FlightsView(flightsBasedOnAirportCode)).build();
     }

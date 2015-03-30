@@ -3,11 +3,15 @@
     <title>Flights</title>
 </head>
 <body>
-<h1 align="center">Flight instances</h1>
+<a href="/flight">Home</a>
+<a href = "javascript:history.back()">Back</a>
+<h3 align="center">Flight instances</h3>
 
 <div align="center">
 
     <table border="1" align="center">
+        {{^flightInstanceDetails.isEmpty}}
+
         <tr align="center">
             <th>
                 Flight Number
@@ -16,11 +20,16 @@
                 Flight Date
             </th>
         </tr>
-        {{#flightInstanceDetails}}
-            <tr>
+            {{/flightInstanceDetails.isEmpty}}
+                {{#flightInstanceDetails}}
+
+                    <tr>
                 <td>{{flightNumber}}</td>
                 <td>{{flightDate}}</td>
             </tr>
+        {{/flightInstanceDetails}}
+        {{^flightInstanceDetails}}
+            No flight instances found!
         {{/flightInstanceDetails}}
 
     </table>

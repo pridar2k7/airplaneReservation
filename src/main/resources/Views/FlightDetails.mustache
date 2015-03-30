@@ -3,39 +3,46 @@
     <title>Flights</title>
 </head>
 <body>
-<h1 align="center">Flight details</h1>
+<a href="/flight">Home</a>
+<a href="javascript:history.back()">Back</a>
+
+<h3 align="center">Flight details</h3>
 
 <div align="center">
 
-        {{^flights.isEmpty}}
-            <table border="1" align="center">
+    {{^flights.isEmpty}}
+    <table border="1" align="center">
 
-            <tr align="center">
-                <th>
-                    Flight Number
-                </th>
-                <th>
-                    Weekdays
-                </th>
-                </tr>
-                {{#flights}}
+        <tr align="center">
+            <th>
+                Flight Number
+            </th>
+            <th>
+                Weekdays
+            </th>
+        </tr>
+        {{#flights}}
 
-                    <tr>
-                {{#.}}
+            <tr>
+            <td>
+                {{#flightNumbers}}
+                    {{.}}
+                {{/flightNumbers}}
+            </td>
+            <td>
+                {{#weekdays}}
+                    {{.}}
+                {{/weekdays}}
+            </td>
+            </tr>
 
-                        <td>{{flightNumber}}</td>
-                        <td>{{weekdays}}</td>
-                {{/.}}
-
-                    </tr>
-
-            {{/flights}}
-        {{/flights.isEmpty}}
+        {{/flights}}
+    {{/flights.isEmpty}}
 </table>
 
     {{^flights}}
-            No flights available
-        {{/flights}}
+        No flights available
+    {{/flights}}
 
 
 </div>

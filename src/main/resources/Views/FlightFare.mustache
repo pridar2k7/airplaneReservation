@@ -3,11 +3,15 @@
     <title>Flights</title>
 </head>
 <body>
-<h1 align="center">Fare Details for the selected flight are: </h1>
+<a href="/flight">Home</a>
+<a href = "javascript:history.back()">Back</a>
+<h3 align="center">Fare Details for the selected flight are: </h3>
 
 <div align="center">
 
     <table border="1" align="center">
+        {{^fareDetails.isEmpty}}
+
         <tr align="center">
             <th>
                 FlightNumber
@@ -22,13 +26,17 @@
                 Restrictions
             </th>
         </tr>
-        {{#fareDetails}}
-            <tr>
+            {{/fareDetails.isEmpty}}
+                {{#fareDetails}}
+                    <tr>
                 <td>{{flightNumber}}</td>
                 <td>{{fareCode}}</td>
                 <td>{{amount}}</td>
                 <td>{{restrictions}}</td>
             </tr>
+        {{/fareDetails}}
+        {{^fareDetails}}
+            No fare details found!
         {{/fareDetails}}
 
     </table>

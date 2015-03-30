@@ -56,7 +56,7 @@ public interface FlightDAO {
 
     @Mapper(FlightDetailsMapper.class)
     @SqlQuery("select flight_number, weekdays from flight where departure_airport_code=:fromAirportCode and arrival_airport_code=:toAirportCode")
-    List<List<Flight>> getDirectFlights(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
+    List<Flight> getDirectFlights(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
 
     @Mapper(OneLegFlightDetailsMapper.class)
     @SqlQuery("select f.flight_number as firstFNum, f.weekdays as firstWD, " +
@@ -67,7 +67,7 @@ public interface FlightDAO {
             "SUBTIME(f1.scheduled_departure_time, f.scheduled_arrival_time)> '01:00:00' and " +
             "(replace(concat('_',concat(f.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f1.weekdays,'_')), '_','.*') or " +
             "replace(concat('_',concat(f1.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f.weekdays,'_')), '_','.*'))")
-    List<List<Flight>> getFlightsWithOneLeg(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
+    List<Flight> getFlightsWithOneLeg(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
 
     @Mapper(TwoLegFlightDetailsMapper.class)
     @SqlQuery("select f.flight_number as firstFNum, f.weekdays as firstWD, " +
@@ -83,5 +83,5 @@ public interface FlightDAO {
             "replace(concat('_',concat(f1.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f.weekdays,'_')), '_','.*')) and " +
     "(replace(concat('_',concat(f1.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f2.weekdays,'_')), '_','.*') or " +
             "replace(concat('_',concat(f2.weekdays,'_')), '_','.*') REGEXP replace(concat('_',concat(f1.weekdays,'_')), '_','.*'))")
-    List<List<Flight>> getFlightsWithTwoLeg(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
+    List<Flight> getFlightsWithTwoLeg(@Bind("fromAirportCode") String fromAirportCode, @Bind("toAirportCode") String toAirportCode);
 }

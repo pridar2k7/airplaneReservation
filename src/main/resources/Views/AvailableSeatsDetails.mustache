@@ -3,12 +3,16 @@
     <title>Flights</title>
 </head>
 <body>
-<h1 align="center">Available Seats</h1>
+<a href="/flight">Home</a>
+<a href = "javascript:history.back()">Back</a>
+<h3 align="center">Available Seats</h3>
 
 <div align="center">
 
     <table border="1" align="center">
-        <tr align="center">
+        {{^availableSeats.isEmpty}}
+
+            <tr align="center">
             <th>
                 Available Seats
             </th>
@@ -17,6 +21,10 @@
             <tr>
                 <td>{{.}}</td>
             </tr>
+        {{/availableSeats}}
+        {{/availableSeats.isEmpty}}
+        {{^availableSeats}}
+            Invalid query
         {{/availableSeats}}
 
     </table>

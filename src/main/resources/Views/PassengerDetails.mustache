@@ -1,26 +1,35 @@
-    <html>
+<html>
 <head>
     <title>Flights</title>
 </head>
 <body>
-<h1 align="center">Passenger details of the selected flight: </h1>
+<a href="/flight">Home</a>
+<a href="javascript:history.back()">Back</a>
+
+<h3 align="center">Passenger details of the selected flight: </h3>
 
 <div align="center">
 
     <table border="1" align="center">
-        <tr align="center">
-            <th>
-                Passenger name
-            </th>
-            <th>
-                Passenger phone
-            </th>
-        </tr>
+        {{^customerList.isEmpty}}
+
+            <tr align="center">
+                <th>
+                    Passenger name
+                </th>
+                <th>
+                    Passenger phone
+                </th>
+            </tr>
+        {{/customerList.isEmpty}}
         {{#customerList}}
             <tr>
                 <td>{{name}}</td>
                 <td>{{phoneNumber}}</td>
             </tr>
+        {{/customerList}}
+        {{^customerList}}
+            Invalid query!
         {{/customerList}}
 
     </table>
