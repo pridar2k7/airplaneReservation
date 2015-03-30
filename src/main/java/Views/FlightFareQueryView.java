@@ -11,7 +11,7 @@ public class FlightFareQueryView extends View{
     private final List<String> flightNumbers;
 
     public FlightFareQueryView(List<String> flightNumbers) {
-        super("FlightFare.mustache");
+        super("FlightFareQuery.mustache");
         this.flightNumbers = flightNumbers;
     }
 

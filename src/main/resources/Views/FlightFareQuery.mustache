@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Flights</title>
+</head>
+<body>
+<h1 align="center">Select a flight number from the following: </h1>
+
+<form align="center" action="/flight/getFareDetails">
+    <select name="flight_number">
+        {{#flightNumbers}}
+        <option value="{{.}}">{{.}}</option>
+        {{/flightNumbers}}
+    </select>
+    <br><br>
+    <input type="submit">
+</form>
+</body>
+</html>

@@ -2,6 +2,7 @@ package resource;
 
 
 import DAO.Domain.Flight;
+import DAO.Domain.FlightInstance;
 import DAO.FlightDAO;
 import Views.*;
 
@@ -28,7 +29,7 @@ public class FlightResource {
 
     @GET
     @Path("/getFlightNumbers")
-    public Response fareDetails() throws URISyntaxException {
+    public Response getFlightNumbers() throws URISyntaxException {
         return Response.ok().entity(new FlightFareQueryView(flightDAO.getFlightNumbers())).build();
     }
 
@@ -36,20 +37,20 @@ public class FlightResource {
     @Path("/getFareDetails")
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
     public Response getFareDetails(@QueryParam("flight_number") String flightNumber) {
-        return Response.ok().entity(new FlightView(flightDAO.getFareDetails(flightNumber))).build();
+        return Response.ok().entity(new FlightFareView(flightDAO.getFareDetails(flightNumber))).build();
     }
 
     @GET
     @Path("/getFlightInstances")
-    public Response flightInstances(@QueryParam("url") String toFetch) throws URISyntaxException {
-        return Response.ok().entity(new ListFlightInstancesView(flightDAO.getFlightInstances(), toFetch)).build();
+    public Response flightInstances(@QueryParam("toFetch") String toFetch) throws URISyntaxException {
+        return Response.ok().entity(new FlightInstancesView(flightDAO.getFlightInstances(), toFetch)).build();
     }
 
 
     @GET
     @Path("/getPassengerDetails")
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
-    public Response listPassengerDetails(@QueryParam("flight_instance") String flightInstance) {
+    public Response getPassengerDetails(@QueryParam("flight_instance") String flightInstance) {
         String[] splitFlightInstances = flightInstance.split("_");
         return Response.ok().entity(new PassengerDetailsView(flightDAO.getCustomerDetails(splitFlightInstances[0], splitFlightInstances[1]))).build();
     }
@@ -57,8 +58,8 @@ public class FlightResource {
 
     @GET
     @Path("/getCustomerNames")
-    public Response passenger() throws URISyntaxException {
-        return Response.ok().entity(new FlightInstanceQueryView(flightDAO.getCustomerNames())).build();
+    public Response getCustomerNames() throws URISyntaxException {
+        return Response.ok().entity(new CustomerNamesView(flightDAO.getCustomerNames())).build();
     }
 
 
@@ -66,7 +67,8 @@ public class FlightResource {
     @Path("/listFlightInstances")
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
     public Response listFlightInstances(@QueryParam("passengerName") String name) {
-        return Response.ok().entity(new FlightInstanceView(flightDAO.getFlightInstanceDetails(name))).build();
+        List<FlightInstance> flightInstanceDetails = flightDAO.getFlightInstanceDetails(name);
+        return Response.ok().entity(new ListFlightInstanceView(flightInstanceDetails)).build();
     }
 
 
@@ -81,15 +83,15 @@ public class FlightResource {
 
     @GET
     @Path("/getAirportCodes")
-    public Response queryFlights() throws URISyntaxException {
-        return Response.ok().entity(new FlightsQueryView(flightDAO.getAirportCodes())).build();
+    public Response getAirportCodes() throws URISyntaxException {
+        return Response.ok().entity(new AirportCodeQueryView(flightDAO.getAirportCodes())).build();
     }
 
 
     @GET
     @Path("/getConnectingFlights")
     @Produces({MediaType.TEXT_HTML, MediaType.APPLICATION_JSON})
-    public Response fetchFlights(@QueryParam("from_airport_code") String fromAirportCode,
+    public Response getConnectingFlights(@QueryParam("from_airport_code") String fromAirportCode,
                                  @QueryParam("to_airport_code") String toAirportCode, @QueryParam("no_of_legs") int legCount) {
         List<List<Flight>> flightsBasedOnAirportCode = new ArrayList<>();
         if (legCount == 0) {
@@ -99,7 +101,7 @@ public class FlightResource {
         }else if (legCount == 2) {
             flightsBasedOnAirportCode = flightDAO.getFlightsWithTwoLeg(fromAirportCode, toAirportCode);
         }
-        List<Flight> flights = flightsBasedOnAirportCode.get(0);
+//        List<Flight> flights = flightsBasedOnAirportCode.get(0);
 //
 //        String replacedString = "_".concat(flights.get(0).getWeekdays().concat("_")).replace("_", ".*");
 //        String replacedString1 = "_".concat(flights.get(1).getWeekdays().concat("_")).replace("_", ".*");
@@ -107,7 +109,7 @@ public class FlightResource {
 //        System.out.println("***********"+replacedString1);
 //        System.out.println("***********"+replacedString.matches(replacedString1));
 
-        return Response.ok().entity(new FetchFlightsView(flightsBasedOnAirportCode)).build();
+        return Response.ok().entity(new FlightsView(flightsBasedOnAirportCode)).build();
     }
 
 

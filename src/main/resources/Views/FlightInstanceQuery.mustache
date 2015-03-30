@@ -1,15 +1,15 @@
 <html>
 <head>
-    <title>Users</title>
+    <title>Flights</title>
 </head>
 <body>
-<h1 align="center">Select customer name</h1>
+<h1 align="center">Select Flight Instances:</h1>
 
-<form action="/flight/listFlightInstances">
-    <select name="passengerName">
-        {{#customers}}
-            <option value="{{name}}">{{name}}</option>
-        {{/customers}}
+<form align="center" action="/flight/get{{url}}">
+    <select name="flight_instance">
+        {{#flightInstances}}
+        <option value="{{flightNumber}}_{{flightDate}}">{{flightNumber}} on {{flightDate}}</option>
+        {{/flightInstances}}
     </select>
     <br><br>
     <input type="submit">
